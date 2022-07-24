@@ -1,11 +1,11 @@
-import { login } from 'components/user/user.thunks';
+import {login} from 'components/user/user.thunks';
 import Alert from 'components/alerts/alert';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAppDispatch } from 'rtk/hooks';
-import { setUserData } from 'components/user/user.slice';
-import { setCookieToken } from 'lib/cookie.helper';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { LoginInterface } from 'components/user/user.interface';
+import {Link, useNavigate} from 'react-router-dom';
+import {useAppDispatch} from 'rtk/hooks';
+import {setUserData} from 'components/user/user.slice';
+import {setCookieToken} from 'lib/cookie.helper';
+import {SubmitHandler, useForm} from 'react-hook-form';
+import {LoginInterface} from 'components/user/user.interface';
 
 function Login() {
   const navigate = useNavigate();
@@ -15,8 +15,7 @@ function Login() {
     const response = await login(values);
 
     if (response) {
-      const { isAdmin } = response.user;
-      dispatch(setUserData(response.user));
+      dispatch(setUserData({token:response.token, isLoggedIn: true}));
       setCookieToken(response.token);
       navigate('/dashboard/');
     }

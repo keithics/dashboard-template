@@ -4,11 +4,8 @@ import { PURGE } from 'redux-persist';
 import {UserDataInterface} from 'components/user/user.interface';
 
 const initialState: UserDataInterface = {
-  email: '',
-  gravatar: '',
   isLoggedIn: false,
-  roles: [],
-  isAdmin: false,
+  token: ''
 };
 
 export const userSlice = createSlice({
@@ -19,7 +16,7 @@ export const userSlice = createSlice({
       return initialState;
     },
     setUserData: (state: Draft<UserDataInterface>, action: PayloadAction<UserDataInterface>) => {
-      action.payload.isLoggedIn = true;
+      action.payload.isLoggedIn = true
       return action.payload;
     },
   },
