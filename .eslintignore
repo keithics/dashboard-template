@@ -1,0 +1,13 @@
+node_modules
+coverage
+jest*
+dist/
+documentation/
+.eslintrc.js
+build
+babel.config.js
+craco.config.js
+src/form/final-form-antd.tsx
+src/hook/use-scripts.ts
+tailwind.config.js
+/postcss.config.js

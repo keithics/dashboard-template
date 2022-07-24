@@ -1,0 +1,9 @@
+@import "css/forms.css";
+@import "css/headers.css";
+@import "css/others.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
