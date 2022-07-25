@@ -1,11 +1,11 @@
-import {login} from 'components/user/user.thunks';
+import { login } from 'components/user/user.thunks';
 import Alert from 'components/alerts/alert';
-import {Link, useNavigate} from 'react-router-dom';
-import {useAppDispatch} from 'rtk/hooks';
-import {setUserData} from 'components/user/user.slice';
-import {setCookieToken} from 'lib/cookie.helper';
-import {SubmitHandler, useForm} from 'react-hook-form';
-import {LoginInterface} from 'components/user/user.interface';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAppDispatch } from 'rtk/hooks';
+import { setUserData } from 'components/user/user.slice';
+import { setCookieToken } from 'lib/cookie.helper';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { LoginInterface } from 'components/user/user.interface';
 
 function Login() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ function Login() {
     const response = await login(values);
 
     if (response) {
-      dispatch(setUserData({token:response.token, isLoggedIn: true}));
+      dispatch(setUserData({ token: response.token, isLoggedIn: true }));
       setCookieToken(response.token);
       navigate('/dashboard/');
     }
@@ -34,18 +34,14 @@ function Login() {
             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <Alert />
               <div>
-                <label>
-                  Email address
-                </label>
+                <label>Email address</label>
                 <div className="mt-1">
                   <input type="text" {...register('email')} />
                 </div>
               </div>
 
               <div>
-                <label>
-                  Password
-                </label>
+                <label>Password</label>
                 <div className="mt-1">
                   <input type="password" {...register('password')} />
                 </div>
@@ -53,15 +49,11 @@ function Login() {
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <Link to="/register">
-                    Register Here
-                  </Link>
+                  <Link to="/register">Register Here</Link>
                 </div>
 
                 <div className="text-sm">
-                  <Link to="forgot">
-                    Forgot your password?
-                  </Link>
+                  <Link to="forgot">Forgot your password?</Link>
                 </div>
               </div>
 

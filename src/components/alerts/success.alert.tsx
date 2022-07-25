@@ -1,7 +1,12 @@
 import { CheckCircleIcon, XIcon } from '@heroicons/react/solid';
 import React from 'react';
 
-export default function AlertSuccess({ message, onClose }) {
+interface AlertSuccessInterface {
+  message: string;
+  onClose: () => void;
+}
+
+export default function AlertSuccess({ message, onClose }: AlertSuccessInterface) {
   return (
     <div className="rounded-md bg-green-50 p-4 mb-3">
       <div className="flex">

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { useAppSelector } from 'redux/hooks';
+import { useAppSelector } from 'rtk/hooks';
 import { selectRequest } from 'request/request.slice';
 
 interface RequestContainerInterface {

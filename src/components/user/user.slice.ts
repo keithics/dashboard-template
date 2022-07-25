@@ -1,11 +1,11 @@
 import { createSlice, Draft, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'rtk/store';
 import { PURGE } from 'redux-persist';
-import {UserDataInterface} from 'components/user/user.interface';
+import { UserDataInterface } from 'components/user/user.interface';
 
 const initialState: UserDataInterface = {
   isLoggedIn: false,
-  token: ''
+  token: '',
 };
 
 export const userSlice = createSlice({
@@ -16,7 +16,7 @@ export const userSlice = createSlice({
       return initialState;
     },
     setUserData: (state: Draft<UserDataInterface>, action: PayloadAction<UserDataInterface>) => {
-      action.payload.isLoggedIn = true
+      action.payload.isLoggedIn = true;
       return action.payload;
     },
   },

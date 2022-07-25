@@ -1,34 +1,44 @@
-import Sidebar from 'components/sidebar/sidebar';
-import RequireAuth from 'components/auth/require-auth';
-import { Outlet } from 'react-router-dom';
-import { useAppSelector } from 'rtk/hooks';
-import { selectSidebarOpen } from 'components/sidebar/sidebar.slice';
-import Topbar from 'components/topbar/topbar';
+import { classNames } from 'lib/helpers';
+import SidebarMobile from 'components/sidebar/sidebar-mobile';
+import navigation from 'components/sidebar/sidebar-navigation';
 
-function DashboardContainer() {
-  const isSidebarOpen = useAppSelector(selectSidebarOpen);
-  const width = isSidebarOpen ? 56 : 14;
-  const logoSrc = isSidebarOpen ? '/logo-white.png' : '/logo_mini.png';
-
+export default function Example() {
   return (
     <>
-      <RequireAuth>
-        <div className="h-screen flex overflow-hidden bg-gray-100">
-          <div className="bg-white flex flex-shrink-0">
-            <div className={`flex flex-col w-${width} border-r border-r-gray-200`}>
-              <div className="flex items-center flex-shrink-0 pl-4">
-                <img className={`h-12 ${isSidebarOpen ? 'mr-1' : ''} pt-4`} src={logoSrc} alt="Logo" />
-              </div>
-              <Sidebar />
+      <div className="min-h-full">
+        <SidebarMobile />
+        <div className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0">
+          <div className="flex flex-col flex-grow bg-cyan-700 pt-5 pb-4 overflow-y-auto">
+            <div className="flex items-center flex-shrink-0 px-4">
+              <img
+                className="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/easywire-logo-cyan-300-mark-white-text.svg"
+                alt="Easywire logo"
+              />
             </div>
+            <nav className="mt-5 flex-1 flex flex-col divide-y divide-cyan-800 overflow-y-auto" aria-label="Sidebar">
+              <div className="px-2 space-y-1">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={classNames(
+                      item.current ? 'bg-cyan-800 text-white' : 'text-cyan-100 hover:text-white hover:bg-cyan-600',
+                      'group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md'
+                    )}
+                    aria-current={item.current ? 'page' : undefined}
+                  >
+                    <item.icon className="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200" aria-hidden="true" />
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </nav>
           </div>
-          <Topbar>
-            <Outlet />
-          </Topbar>
         </div>
-      </RequireAuth>
+
+        <div className="lg:pl-64 flex flex-col flex-1"></div>
+      </div>
     </>
   );
 }
-
-export default DashboardContainer;

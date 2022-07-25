@@ -1,21 +1,10 @@
-import {ReactNode} from 'react';
-import {useAppDispatch, useAppSelector} from 'rtk/hooks';
-import {logout, selectUserData} from 'components/user/user.slice';
-
-const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-];
-
-function Topbar({ children }: { children: ReactNode }) {
-  const dispatch = useAppDispatch();
-  const userData = useAppSelector(selectUserData);
-
-  const logoutUser = () => {
-    dispatch(logout());
-  };
-
-
+function Topbar() {
+  // const dispatch = useAppDispatch();
+  // const userData = useAppSelector(selectUserData);
+  //
+  // const logoutUser = () => {
+  //   dispatch(logout());
+  // };
 
   return (
     <>

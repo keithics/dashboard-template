@@ -1,5 +1,5 @@
 import 'app.css';
-import {Route, Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Login from 'components/user/login';
 import Register from 'components/user/register';
 import NotfoundError from 'components/errors/notfound.error';

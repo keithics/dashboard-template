@@ -2,7 +2,7 @@ import { Component, ErrorInfo, ReactNode } from 'react';
 
 import * as Sentry from '@sentry/react';
 import GenericError from 'components/errors/generic.error';
-import {Scope} from '@sentry/react';
+import { Scope } from '@sentry/react';
 
 interface ErrorStateInterface {
   hasError: boolean;

@@ -1,7 +1,7 @@
 import { register as registerUser } from 'components/user/user.thunks';
 import Alert from 'components/alerts/alert';
 import { Link } from 'react-router-dom';
-import { LoginInterface, RegisterInterface } from 'components/user/user.interface';
+import { RegisterInterface } from 'components/user/user.interface';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 function Register() {
@@ -44,15 +44,11 @@ function Register() {
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <Link to="/">
-                    Login Here
-                  </Link>
+                  <Link to="/">Login Here</Link>
                 </div>
 
                 <div>
-                  <Link to="forgot">
-                    Forgot your password?
-                  </Link>
+                  <Link to="forgot">Forgot your password?</Link>
                 </div>
               </div>
 

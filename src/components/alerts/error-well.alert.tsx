@@ -1,6 +1,12 @@
 import React from 'react';
 
-export default function AlertErrorWell({ title, message, children }) {
+interface AlertErrorWellInterface {
+  title: string;
+  message: string;
+  children: React.ReactNode;
+}
+
+export default function AlertErrorWell({ title, message, children }: AlertErrorWellInterface) {
   return (
     <div className="bg-red-50 sm:rounded-lg mb-3">
       <div className="px-4 py-5 sm:p-6">

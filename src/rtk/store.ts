@@ -3,7 +3,7 @@ import { requestReducer } from 'request/request.slice';
 import { userReducer } from 'components/user/user.slice';
 import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import {sidebarReducer} from 'components/sidebar/sidebar.slice';
+import { sidebarReducer } from 'components/sidebar/sidebar.slice';
 
 const reducer = {
   user: userReducer,

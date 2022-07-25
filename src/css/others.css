@@ -1,5 +1,5 @@
 @layer base {
-    a{
-        @apply font-medium text-red-600 hover:text-red-500
-    }
+  a {
+    @apply font-medium text-red-600 hover:text-red-500;
+  }
 }

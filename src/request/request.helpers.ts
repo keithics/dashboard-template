@@ -6,9 +6,7 @@ interface DevUrlsInterface {
 /**
  * Dev use only, if you want to mix and match dev and testing server
  */
-const devUrls: DevUrlsInterface[] = [
-  { service: 'users', url: 'http://localhost:8081' },
-];
+const devUrls: DevUrlsInterface[] = [{ service: 'users', url: 'http://localhost:8081' }];
 
 /**
  * Get API URL, for dev use, add another service in devUrls

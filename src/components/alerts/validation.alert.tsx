@@ -1,7 +1,12 @@
 import { ExclamationCircleIcon, XIcon } from '@heroicons/react/solid';
 import React from 'react';
 
-export default function AlertValidation({ message, onClose }) {
+interface AlertValidationInterface {
+  message: string;
+  onClose: () => void;
+}
+
+export default function AlertValidation({ message, onClose }: AlertValidationInterface) {
   return (
     <div className="rounded-md bg-yellow-50 p-4 mb-3">
       <div className="flex">

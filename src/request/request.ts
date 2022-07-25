@@ -33,7 +33,7 @@ export const getSilentFetch = (url: string): Promise<any> => {
  * @param data - post body data
  * @param saveMessage save message texts
  */
-export const postFetch = (url: string, data:unknown | null, saveMessage = 'Saved'): Promise<any> => {
+export const postFetch = (url: string, data: unknown | null, saveMessage = 'Saved'): Promise<any> => {
   return fetchRequest(url, data, 'post', true, saveMessage);
 };
 
@@ -42,7 +42,7 @@ export const postFetch = (url: string, data:unknown | null, saveMessage = 'Saved
  * @param url - url of the request
  * @param data - post body data
  */
-export const postSilentFetch = (url: string, data : unknown | null): Promise<any> => {
+export const postSilentFetch = (url: string, data: unknown | null): Promise<any> => {
   return fetchRequest(url, data, 'post', false);
 };
 
@@ -52,7 +52,7 @@ export const postSilentFetch = (url: string, data : unknown | null): Promise<any
  * @param data - post body data
  * @param saveMessage save message texts
  */
-export const putFetch = (url: string, data : unknown | null, saveMessage = 'Saved'): Promise<any> => {
+export const putFetch = (url: string, data: unknown | null, saveMessage = 'Saved'): Promise<any> => {
   return fetchRequest(url, data, 'put', true, saveMessage);
 };
 
@@ -62,7 +62,7 @@ export const putFetch = (url: string, data : unknown | null, saveMessage = 'Save
  * @param data - post body data
  * @param saveMessage save message texts
  */
-export const putSilentFetch = (url: string, data : unknown | null): Promise<any> => {
+export const putSilentFetch = (url: string, data: unknown | null): Promise<any> => {
   return fetchRequest(url, data, 'put', false);
 };
 

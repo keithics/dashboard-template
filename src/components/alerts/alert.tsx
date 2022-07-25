@@ -12,19 +12,21 @@ function Alert() {
     dispatch(resetRequest());
   }
 
+  const alertMessage = message || '';
+
   return (
     <>
       {isFailure && (
         <div>
-          <AlertError message={message} onClose={onClose} />
+          <AlertError message={alertMessage} onClose={onClose} />
         </div>
       )}
 
-      {isValidationError && <AlertValidation message={message} onClose={onClose} />}
+      {isValidationError && <AlertValidation message={alertMessage} onClose={onClose} />}
 
-      {saveSuccess && <AlertSuccess message={message} onClose={onClose} />}
+      {saveSuccess && <AlertSuccess message={alertMessage} onClose={onClose} />}
 
-      {deletedSuccess && <AlertSuccess message={message} onClose={onClose} />}
+      {deletedSuccess && <AlertSuccess message={alertMessage} onClose={onClose} />}
     </>
   );
 }

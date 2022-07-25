@@ -1,7 +1,12 @@
 import { ExclamationCircleIcon, XIcon } from '@heroicons/react/solid';
 import React from 'react';
 
-export default function AlertError({ message, onClose }) {
+interface AlertErrorInterface {
+  message: undefined | string;
+  onClose: () => void;
+}
+
+export default function AlertError({ message, onClose }: AlertErrorInterface) {
   return (
     <div className="rounded-md bg-red-50 p-4 mb-3">
       <div className="flex">

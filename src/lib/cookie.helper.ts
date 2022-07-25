@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 import { persistor } from 'rtk/store';
 const cookieName = 'token';
 export function getToken(): string | undefined {
-  return Cookies.get(cookieName)
+  return Cookies.get(cookieName);
 }
 
 export function setCookieToken(token: string) {
